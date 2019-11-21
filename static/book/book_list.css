@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.container {
+    
+}
+
+h2 {
+    color: red;
+    margin-bottom: 50px;
+}
+
+
+/* .book_lists {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+
+.book_item {
+    width: 45%;
+    height: 500px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.book_title {
+
+}
+
+
+
+.tag p {
+    padding-right: 10px;
+}
+
+.comment {
+    padding: 10px 0;
+}
+
+footer {
+    background-color: #333;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    
+}
+
+

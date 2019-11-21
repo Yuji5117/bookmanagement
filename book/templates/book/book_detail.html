@@ -1,0 +1,15 @@
+{% extends 'book/base.html' %}
+
+{% block content %}
+<h2><a class="book_title" href="{% url 'book:index' %}">詳細</a></h2>
+<div class="book_item">
+    <h3><a class="book_title" href="{% url 'book:index' %}"></a>{{ book.title }}</a></h3>
+    <div class="tag">
+        <p>{{ book.auther }}</p>
+        <p>{{ book.category }}</p>
+    </div>
+    <p class="comment">{{ book.comment }}</p>
+    <img src="{{ book.image.url }}" alt="" height="150px", width="250px">    
+    <p>{{ book.created_at }}</p>      
+</div>    
+{% endblock %}

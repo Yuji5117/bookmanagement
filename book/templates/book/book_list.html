@@ -1,0 +1,23 @@
+{% extends 'book/base.html' %}
+
+{% block content %}
+<form action="" method="GET">
+    {{form}}
+    <button type="submit">検索</button>
+</form>
+
+<h2 class="mt-5">本リスト</h2>
+<div class="book_lists">
+    {% for book in book_list %}
+    <div class="media mb-5 pb-5 border-bottom">
+        <img class="d-flex mr-3" src="{{ book.image.url }}" alt="Generic placeholder image" height="150px" width="150px">
+        <div class="media-body">
+            <h5 class="mt-0"></h5><a href="{% url 'book:detail' book.pk %}">{{ book.title }}</a></h5>
+            <p>{{ book.comment }}</p>
+        </div>
+    </div>   
+    {% endfor %}
+
+    {% include 'book/page1.html' %}
+</div>
+{% endblock %}
