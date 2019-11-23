@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import dj_database_url
+import django_heroku
+from socket import gethostname
+
+hostname = gethostname()
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -30,7 +34,6 @@ DEBUG = False
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -79,20 +82,14 @@ WSGI_APPLICATION = 'bookmanagement.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'book',
-        'USER': 'name',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'POST': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -136,5 +133,5 @@ STATICFILES_DIRS = [
 ]
 
 
-
+django_heroku.settings(locals())
 
