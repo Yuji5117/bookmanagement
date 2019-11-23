@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import django_heroku
 from socket import gethostname
+import django_heroku
 
 hostname = gethostname()
 
