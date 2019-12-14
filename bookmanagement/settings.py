@@ -11,10 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from socket import gethostname
-import django_heroku
 
-hostname = gethostname()
 
 
 
@@ -29,10 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '4-fevowbr!5(^q(!9-94f30-nmf^^)koz598=y78)k_1z#=ngc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+DEBUG = True
 
 
 
@@ -132,6 +126,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-
-django_heroku.settings(locals())
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
